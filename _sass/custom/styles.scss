@@ -1,0 +1,81 @@
+a {
+  transition: color 0.3s;
+}
+
+.figure {display: table;margin-right: auto;margin-left: auto;}
+
+.figure-caption {display: table-caption;caption-side: bottom;text-align: center;}
+
+.current {
+  color: red;
+}
+
+.ducks {
+  float: left;
+  margin-left: 200px;
+}
+
+.highlight
+{
+  font-family: $font-family-monospace;
+  background-color: #f2f2f2;
+}
+
+pre 
+{
+  padding: 1.0rem;
+  font-size: $font-size-code;
+}
+
+code
+{
+  background-color: #f2f2f2;
+  padding: 0.1rem;
+  font-size: $font-size-code;
+  line-height: 1.0rem;
+}
+
+.custom-card
+{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+a.nav-link
+{
+  padding: 0.3rem 1.0rem;
+  h6
+  {
+    font-weight: 400;
+  }
+}
+
+h1
+{
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+h1.display-4
+{
+  padding-top:0;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+.fa-twitter-square,
+.fa-facebook-square,
+.fa-reddit-square
+{
+  font-size:30px;
+  font-weight: 100;
+}
+
+.aside
+{
+  font-size: 1rem;
+}

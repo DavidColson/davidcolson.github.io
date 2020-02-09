@@ -1,0 +1,18 @@
+# Site settings
+title: David Colson's Blog
+email: davidcncolson@gmail.com
+description: My personal writings on game development, maths and physics
+url: www.davidcolson.com
+logo: /assets/images/ProfilePic.jpg
+twitter:
+  card: summary_large_image
+  username: dave_colson
+social:
+  name: dave_colson
+  links:
+    - https://twitter.com/dave_colson
+    - https://www.linkedin.com/in/colsondavid
+    - https://github.com/davidcolson
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

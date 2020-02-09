@@ -1,0 +1,20 @@
+<div class="col-12 col-md-2 p-0">
+  <nav class="navbar navbar-expand flex-row justify-content-center pb-0 flex-md-column align-items-md-end">
+    {% for item in site.data.navigation %}
+      <a href="{{ item.link }}" class="nav-item nav-link{% if page.url == item.link %} active{% endif %} text-md-right">
+        <h6>{{ item.name }}</h6>
+      </a>
+    {% endfor %}
+  </nav>
+  <nav class="navbar navbar-expand flex-row justify-content-center pt-0 flex-md-column align-items-md-end pt-md-2">
+    <a href="https://twitter.com/dave_colson" class="nav-item nav-link">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://github.com/davidcolson" class="nav-item nav-link">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/colsondavid/" class="nav-item nav-link">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </nav>
+</div>
