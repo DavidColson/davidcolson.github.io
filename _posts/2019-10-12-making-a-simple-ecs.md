@@ -19,14 +19,14 @@ You might be familiar with the more object oriented approach to component system
 Another option is to update all components of a specific type, but because each entity owns the component data, they're stored in different places in memory. So as you process each component you're jumping around in memory again.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure1.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure1.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">Memory layout for components stored inside each entity.</figcaption>
 </figure>
 
 You could take ownership of the component data away from the entities, and store them in contiguous memory for each type, and then each entity stores a list of pointers to components it's tied to. This is definitely better for performance, assuming you're updating components per type. With regards to code organisation though, this still isn't ideal.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure2.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure2.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">Components of same type are now contiguous, and we store pointers to them.</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ A core idea in object-oriented programming is that data is encapsulated in objec
 With ECS, an entity just becomes an index that lets you look up components assigned to that entity. The logic then moves out, and it operates on the components. An entity becomes a loose concept at this point as most systems only operate on subsets of components. This gives us massive opportunity to optimize our data access for the specific problem the system is trying to solve, this is the actual beauty of this architecture, and what I'd like to focus on with this implementation of an ECS framework.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure3.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure3.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">Components of same type are still contiguous, and entities are just id numbers.</figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ The core idea with the approach we'll be taking is that each entity is just an I
 {% include aside.html content="Note that this is just one way to implement an ECS framework, I talk about a few others at the end of the article." %}
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure4.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure4.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">Components pools store the actual data, bitmasks store what entities own what components.</figcaption>
 </figure>
 
@@ -542,7 +542,7 @@ And that's it. We're finished! The initial goal we set out near the start of thi
 There is one small problem with this implementation, which you may have already noticed. We allocate memory for components that an entity might not be using. Here's a picture to demonstrate:
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure5.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure5.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">The score component has a lot of unused memory as few entities use it.</figcaption>
 </figure>
 
@@ -557,14 +557,14 @@ Having said that, if your game is starting to scale, and this is becoming a prob
 A sparse set is a way of mapping sparse indexes to a tightly packed array. It essentially amounts to two lists, one sparsely filled with indexes to the tightly packed list. And the packed list contains indexes back to the sparse list elements. A diagram might help this concept come across.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure6.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure6.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">A sparse set and how it maps sparse indexes to tightly packed memory.</figcaption>
 </figure>
 
 The way you use this in an ECS is that each component pool has a sparse set assigned to it. The sparse list of indices contains the actual indices in the memory pool that you can retrieve your component data from. The packed array contains a list of entity indices that have a component of this type assigned to them. This way you can do away with the bitmask, and use the sparse set both to access tightly packed memory, and to find out if an entity has a component assigned to it.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure7.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure7.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">Components can now live tightly packed, and we use the sparse set to access them.</figcaption>
 </figure>
 
@@ -579,7 +579,7 @@ This type of ECS is the one that Unity is using in it's Data-Oriented-Technology
 The core idea is that all entities that have the same set of components are called an "archetype", and are stored together in a contiguous array. Iterating over entities with a particular set of components, then becomes a case of iterating over the archetypes and then giving back all the entities in those matching archetypes. Assuming the amount of archetypes is much much less than the number of entities (you'd hope this is the case), iterating becomes extremely fast. There's very little checking to do, and data is quite close together.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/ecsArticle/figure8.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/ecsArticle/Figure8.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
   <figcaption class="figure-caption">Each archetye has it's own memory pool where it stores the components for each entity in that archetype.</figcaption>
 </figure>
 
