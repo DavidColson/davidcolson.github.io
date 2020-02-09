@@ -7,7 +7,7 @@ title: About
 
 <h1 class="display-4 text-center text-md-left">About</h1>
 
-<img src="{{ "/assets/images/ecsArticle/Me.png" | relative_url }}" class="rounded img-fluid mx-auto d-block float-md-left pb-md-3 pr-md-5 " alt="me">
+<img src="{{ "/assets/images/Me.png" | relative_url }}" class="rounded img-fluid mx-auto d-block float-md-left pb-md-3 pr-md-5 " alt="me">
 
 Hi my name is David Colson, I'm a game programmer and designer and I currently work at [Cloud Imperium Games](http://cloudimperiumgames.com/) on a massive space simulation game called [Star Citizen](https://robertsspaceindustries.com/). I designed and wrote the flight model for the spaceships in Star Citizen, and currently work on various other vehicle systems. This website is my personal site though where I write about my interests and side projects. 
 
