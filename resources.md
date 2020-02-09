@@ -11,6 +11,8 @@ A list of links to things I've found interesting
 
 - **[Aras Pranckevičius' Blog](https://aras-p.info/blog/)** -- 
 Aras is a build engineer at Unity technologies, previously a graphics programmer. His blog is full of fascinating things.
+- **[Gaffer On Games](https://gafferongames.com/)** -- 
+An absolute gold mine of information on networking, and physics simulation in games. One of the best game programming blogs there is.
 - **[ForrestTheWoods](https://www.forrestthewoods.com/blog/)** -- Forrest Smith's Blog, a software engineer who writes stunning articles about things like ballistic trajectories and the balancing of Smash Bros.
 - **[Red Blob Games](https://www.redblobgames.com/)** -- Amazing interactive visual explanations of math and algorithms used in games
 - **[Alan Zucconi](https://www.alanzucconi.com/)** -- This blog is full of incredible game development tutorials on topics like shaders, rendering and even machine learning
