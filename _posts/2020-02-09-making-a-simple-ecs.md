@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to make a simple entity-component-system in C++"
-date:   2019-10-11 17:10:23 +0100
+date:   2020-02-09 11:10:23 +0000
 description: A quick look at how I made the simple entity-component-system implementation I could in my own game engine, and some future improvements you could make.
 include_mathjax: false
 ---
