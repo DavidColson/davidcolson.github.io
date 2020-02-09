@@ -263,7 +263,7 @@ T* Get(EntityID id)
 }
 ```
 
-{% include aside.html content="Take note that we test the bitmask before accessing the component pool. If you've removed a component by unsetting it's bit, this will prevent you accessing component data that's not supposed to be assigned to this entity." %}
+{% include aside.html content="Take note that we test the bitmask before accessing the component pool. If you've removed a component by unsetting its bit, this will prevent you accessing component data that's not supposed to be assigned to this entity." %}
 
 We've achieved quite a lot, and so far the example is less than 100 lines of code. You could even use this as a bare bones ECS framework at this point. Systems would have to manually loop over the list of entities, checking the bitmask on every entity, which isn't ideal, but it would work. There is one important missing feature though, deleting entities.
 
