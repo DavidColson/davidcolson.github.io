@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Exploring rectangle packing algorithms"
-date:   2020-03-10 11:10:23 +0000
+date:   2020-03-23 16:10:23 +0000
 description: Guiding you through my exploration of rectangle packing algorithms, and learning a lesson in why overcomplicating things isn't always necessary.
 include_mathjax: false
 ---
