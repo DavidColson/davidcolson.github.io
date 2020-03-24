@@ -1037,10 +1037,16 @@ That about sums it up really. Understand what your problem is, the solution you 
 
 I collected a lot of articles, links and papers while researching for this. Here they all are for your adventures.
 
+- **[A Thousand Ways to Pack the Bin](http://pds25.egloos.com/pds/201504/21/98/RectangleBinPack.pdf)** --
+A fascinating, in depth review of various different texture packing algorithms, goes into much more depth than I have.
+- **[Survey of two-dimensional packing methods](https://www.csc.liv.ac.uk/~epa/surveyhtml.html)** --
+An excellent starting point for anyone wanting to explore 2D packing algorithms.
 - **[RectPack2D](https://github.com/TeamHypersomnia/rectpack2D)** -- 
 An implementation of binary tree packing.
 - **[Packing Lightmaps](https://blackpawn.com/texts/lightmaps/default.html)** --
 An article on binary tree packing.
+- **[Binary Tree Bin Packing Algorithm](https://codeincomplete.com/posts/bin-packing/)** --
+Very well presented article on the binary tree packing algorithm.
 - **[Glorp Fontbaker](https://github.com/zorbathut/glorp/blob/4307a13af75ca1c5386988b1b693c5d97a4c3a94/fontbaker/main.cpp)** --
 A more advanced pixel scanning packing implementation specifically for packing fonts with Freetype.
 - **[Gamedev Stack Exchange - Texture Packing Algorithm](https://gamedev.stackexchange.com/questions/2829/texture-packing-algorithm)** --
@@ -1051,16 +1057,12 @@ Another fascinating thread on stack overflow this time.
 The article that inspired the grid splitting algorithm.
 - **[A Skyline-Based Heuristic for the 2D Rectangular Strip Packing Problem](https://www.researchgate.net/publication/221049934_A_Skyline-Based_Heuristic_for_the_2D_Rectangular_Strip_Packing_Problem)** --
 A paper on the skyline packing algorithm.
-- **[TexturePacking GitHub repo](https://github.com/SamuelGong/TexturePacking)** --
-An excellent article and example code for a fancy packing algorithm derived from our naive row packer.
 - **[stb_rect_pack.h](https://github.com/nothings/stb/blob/master/stb_rect_pack.h)** --
 The source code of stb_rect_pack.h, a very versatile, single header packing algorithm that you should probably use instead of rolling your own. As in the article above, implements the skyline bottom-left algorithm.
 - **[Font stash skyline bottom-left implementation](https://github.com/memononen/fontstash/commit/19527c698e9c45fdcf8ffcb73ae8428d9c52ebed)** --
 Another skyline bottom-left implementation used in the fontstash library
+- **[TexturePacking GitHub repo](https://github.com/SamuelGong/TexturePacking)** --
+An excellent article and example code for a fancy packing algorithm derived from our naive row packer.
 - **[Optimal Rectangle Packing: Initial Results by Richard E. Korf](https://www.aaai.org/Papers/ICAPS/2003/ICAPS03-029.pdf)** --
 An older paper with another fancy packing algorithm I didn't explore much.
-- **[Binary Tree Bin Packing Algorithm](https://codeincomplete.com/posts/bin-packing/)** --
-Very well presented article on the binary tree packing algorithm.
-- **[Survey of two-dimensional packing methods](https://www.csc.liv.ac.uk/~epa/surveyhtml.html)** --
-An excellent starting point for anyone wanting to explore 2D packing algorithms.
 
