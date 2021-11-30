@@ -57,7 +57,7 @@ I thought alright, let's visualize this. I'll print out the packed rectangles an
 This lead me to seeing this:
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/stb_rect_pack.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/stb_rect_pack.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">We can see the output of stb_rect_pack here, with the state of the linked list along the bottom.</figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ What this algorithm appears to be doing is looping through all these open nodes 
 I'll demonstrate with a drawing,
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/Skyline Packing.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/Skyline Packing.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Skyline packing will maintain nodes representing the skyline, and remove nodes when they get covered.</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ Before I started trying other algorithms I decided it was necessary to have a me
 I filled up my rectangle as much as I could like so:
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/stb_rect_pack_filled.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/stb_rect_pack_filled.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Filled the containing rectangle as much as I could.</figcaption>
 </figure>
 
@@ -150,7 +150,7 @@ void PackRectsNaiveRows(std::vector<Rect>& rects)
 It's ridiculously simple, but as I said, just a starting point. So how does this look?
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/NaiveRowPacker25.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/NaiveRowPacker25.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Packing 25 rectangles with our naive row packing algorithm</figcaption>
 </figure>
 
@@ -161,7 +161,7 @@ At this point, I was alarmed. Sure I thought I could do better than skyline bott
 One of my first ideas centred around the idea that skyline bottom-left performs better when there are much more rectangles since it's struggling to place these giant rectangles inside my test area. So let's give that a go.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/stb_rect_pack250.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/stb_rect_pack250.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Packing 250 rectangles using the skyline bottom-left algorithm, performs much better!</figcaption>
 </figure>
 
@@ -170,7 +170,7 @@ Ah, that's better. So it's got a packing ratio of 92.8% and it took 0.579 millis
 Presumably, this is much better than my naive algorithm on the same set of rectangles. Let's take a look.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/NaiveRowPacker250.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/NaiveRowPacker250.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Packing 250 rectangles our naive row packing algorithm. It's still pretty damn good for it's simplicity.</figcaption>
 </figure>
 
@@ -338,7 +338,7 @@ if (valid)
 Let's give that a test, first with few rectangles.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning25.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning25.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Pixel scanning algorithm packing 25 rectangles. Pretty tight!</figcaption>
 </figure>
 
@@ -349,7 +349,7 @@ After doing some profiling I realised that's there's nothing particularly wrong,
 Let's try with lots of rectangles now.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Pixel scanning algorithm packing 250 rectangles. 96.7% packing ratio, our tightest yet!</figcaption>
 </figure>
 
@@ -368,17 +368,17 @@ There are 4 obvious sorting methods (leaving out more exotic methods):
 We've already seen sort by height, let's see what the others do:
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250WidthSort.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250WidthSort.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Pixel scanning algorithm sorting by width. Give us a packing ratio of 90.5% and took 1704.269 milliseconds.</figcaption>
 </figure>
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250AreaSort.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250AreaSort.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Pixel scanning algorithm sorting by area. Give us a packing ratio of 91.3% and took 1604.344 milliseconds.</figcaption>
 </figure>
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250PerimeterSort.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/PixelScanning250PerimeterSort.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Pixel scanning algorithm sorting by perimeter. Give us a packing ratio of 94.3% and took 1692.158 milliseconds.</figcaption>
 </figure>
 
@@ -393,21 +393,21 @@ Where do we go from here then? The pixel scanner is by far the best, but it's ve
 Inspired by [this article on code project](https://www.codeproject.com/Articles/210979/Fast-optimizing-rectangle-packing-algorithm-for-bu#basic), the idea here is that we'll represent our container by a dynamic grid. Each cell has a location, size and boolean telling you if it's occupied. At first, it's got a single cell, representing the entire area. As we add rectangles, we'll split the grid along the edges of the rectangle. The first rectangle we place will create 4 cells like so, with one occupied by our new rectangle.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/GridSplitSingle.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/GridSplitSingle.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">The grid splitting algorithm working on a single rectangle. You can see how the grid has had two splits.</figcaption>
 </figure>
 
 If we now pack two rectangles you can see the grid gets split again:
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/GridSplit2.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/GridSplit2.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">The grid splitting algorithm working on two rectangles. The grid will continue splitting like this.</figcaption>
 </figure>
 
 Each grid cell is treated as a pixel, so instead of scanning the whole image we just check the grid cells, and all their neighbouring cells to see if we can fit a rectangle in any particular place.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/GridSplit10.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/GridSplit10.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">The grid splitting algorithm working on ten rectangles.</figcaption>
 </figure>
 
@@ -661,14 +661,14 @@ bool CanBePlaced(DynamicGrid& grid, Vec2i desiredNode, Vec2i desiredRectSize, Ve
 You can see how the complexity is quickly spiralling out of control here. Simply finding out if we can place a rectangle is nearly as complex as the actual packing algorithm. Anyway, that's it, we've got our grid splitting algorithm. We're a far cry from the simplicity of the row packer. But hopefully, this gives us the packing ratio of the pixel scanner, but much faster as we no longer need to check all these pixels. Let's see how it performs with just 25 rectangles.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/GridSplit25.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/GridSplit25.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Our finished grid splitting algorithm working on our set of 25 rectangles. It doesn't look that good.</figcaption>
 </figure>
 
 Note that this appears to work best with perimeter packing, so that's what's shown above. I've not explored exactly why. It's evidently not *exactly* like pixel scanning. Anyway, this has a packing ratio of 87.1% and took 1.370 milliseconds. Much faster! That is excellent stuff. It's not quite as dense as pixel scanning, but it's better than skyline bottom-left if a lot slower still. We'll do a more thorough comparison later in the article, but it's interesting to note that this still does not perform better than our simple row packer. Let's try it with more rectangles now.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/GridSplit250.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/GridSplit250.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Our finished grid splitting algorithm working on our set of 250 rectangles. This looks much closer to the pixel scanning algorithm now.</figcaption>
 </figure>
 
@@ -685,7 +685,7 @@ Let's go back to being simple again shall we?
 This is based on [another method I found](https://blackpawn.com/texts/lightmaps/default.html) while researching for this article. The idea here is that we represent open spaces in the container with a binary tree. Let me draw a picture
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/packing-trees.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/packing-trees.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">As you can see, empty spaces represent leaves in the tree. </figcaption>
 </figure>
 
@@ -791,7 +791,7 @@ void PackRectsBinaryTree(std::vector<Rect>& rects)
 Ahh, compared to the grid splitter, the simplicity of this is a breath of fresh air! Let's see how it compares with 25 rectangles.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/BinaryTree25.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/BinaryTree25.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Our binary tree packer with 25 rectangles. Doesn't look that good</figcaption>
 </figure>
 
@@ -870,14 +870,14 @@ Note that by changing the `giveUpStep` value we can choose if we want speed or p
 Anyway, let's see how that fairs against the same set of rectangles as above.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/BinaryTree25Tight.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/BinaryTree25Tight.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Our binary tree packer with the same 25 rectangles as above, now we try for the smallest size possible. Looks much better</figcaption>
 </figure>
 
 That looks far better! We get a packing ratio of 82.5% and a time taken of 0.478 milliseconds. Didn't take that much longer to find a good size, and the packing ratio is far improved. This puts it in the realm of the other algorithms. Let's try with 250 rectangles.
 
 <figure class="figure text-center">
-  <img src="{{ "/assets/images/rectpackingArticle/BinaryTree250.png" | relative_url }}" class="figure-img rounded img-fluid pb-md-3 pr-md-5 " alt="figure1">
+  <img src="{{ "/assets/images/rectpackingArticle/BinaryTree250.png" | relative_url }}" class="figure-img rounded img-fluid" alt="figure1">
   <figcaption class="figure-caption">Our binary tree packer with 250 rectangles. Starting to show some weakness here.</figcaption>
 </figure>
 
