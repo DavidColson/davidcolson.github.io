@@ -6,7 +6,7 @@ description: My exploration into making a 90s style fantasy console inspired by 
 include_mathjax: true
 ---
 
-I've started a new side project I'm pretty excited about. I'm making a fantasy console-based inspired by PS1 era technology. There is quite a lot to the project, but for now, I wanted to talk about the rendering, which was my first step in this project. In this article, I'll detail all I've learned in researching the PS1 and other retro game consoles. And of course, how I've implemented it in the fantasy console, which will be called Polybox. Note that I've not gone into 2D sprite rendering because it's somewhat simple and this article is long enough as it is.
+I've started a [new side project](https://github.com/DavidColson/Polybox) I'm pretty excited about. I'm making a fantasy console-based inspired by PS1 era technology. There is quite a lot to the project, but for now, I wanted to talk about the rendering, which was my first step in this project. In this article, I'll detail all I've learned in researching the PS1 and other retro game consoles. And of course, how I've implemented it in the fantasy console, which will be called Polybox. Note that I've not gone into 2D sprite rendering because it's somewhat simple and this article is long enough as it is.
 
 Here's the end result I've achieved in the Polybox console,
 
